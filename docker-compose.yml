@@ -1,0 +1,19 @@
+version: '3'
+services:
+  jpe-app:
+    image: jpe-app
+    container_name: jpe-app
+    build:
+      context: ./
+      args:
+        DB_SERVER: $DB_SERVER
+        DB_USERNAME: $DB_USERNAME
+        DB_PASSWORD: $DB_PASSWORD
+        DB_NAME: $DB_NAME
+    ports:
+      - "8085:80"
+    environment:
+      - DB_SERVER=$DB_SERVER
+      - DB_USERNAME=$DB_USERNAME
+      - DB_PASSWORD=$DB_PASSWORD
+      - DB_NAME=$DB_NAME
